@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap"); /* Maven Pro  font-family: 'Maven Pro', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap"); /* Varela Round  font-family: 'Maven Pro', sans-serif; */
+ @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300&family=Maven+Pro:wght@400;500&display=swap'); /*font-family: 'Lexend Deca', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+    
+}
+
+:root{
+    --bs-dark-color: #1a1d20;
+    --bs-dark-primary: #1c1c1c;
+    --bs-main-color: #fff;
+    --bs-primary-color: #c6c6c6;
+    --secondayr-color: #29a9fd;
+    --bs-supporting-color: #C850C0;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--bs-dark-color);
+}
+
+h1{
+    font-size: 2.8rem;
+}
+
+h2{
+    line-height: 3rem;
+    font-weight: 600;
+    font-size: 3.4rem;
+   
+}
+
+.common-section{
+  padding: 0 0 9rem 0;
+}
+
+    .button-85 {
+      /* margin: 35px; */
+      /* margin-left: -5px; */
+      padding: 0.6em 2em;
+      border: none;
+      outline: none;
+      color: rgb(255, 255, 255);
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 20px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      transition: all .5s linear 0s;
+    }
+    
+    .button-85:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button-85 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 20px;
+    }
+    
+    @keyframes glowing-button-85 {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    
+    .button-85:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #222;
+      left: 0;
+      top: 0;
+      border-radius: 20px;
+    }
+
+    .button-85:hover{
+        transform: scale(1.2);
+    }
+
+p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--bs-dark-color);
+    letter-spacing: 0.07rem;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 0.03rem;
+    word-spacing: .1rem;
+}
+
+li{
+    list-style: none;
+}
+
+.common-heading{
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+}
+
+.common-title{
+    margin-bottom:  4.2rem;
+}
+
+/* nab-bar-style */
+.nav-link{
+    color:  var(--bs-main-color);
+    font-weight: bold;
+}
+.nav-link:hover{
+    color: var(--secondayr-color);
+}
+
+
+
+/* hero-section-start */
+
+.hero-section .container{
+    display: grid;
+    place-content: center;
+    height: inherit;
+}
+
+.bg-main{
+    height: 80vh;
+    position: relative;
+}
+
+.navbar{
+    /* background-color: #0b1746;
+    background-image: linear-gradient(43deg, #0b1746 0%, #523096 46%, #b5d7e2 100%);
+    
+    border: 2px solid white; */
+
+    background-color: var(--bs-dark-primary);
+}
+.bg-color{
+    /* background-color: #0b1746;
+    background-image: linear-gradient(43deg, #0b1746 0%, #523096 46%, #b5d7e2 100%); */
+
+    background-color: var(--bs-dark-primary);
+}
+
+.bg-theme{
+    color: var(--bs-supporting-color);
+    background-image: none ;
+}
+.text-light-grey{
+    color: var(--bs-primary-color);
+}
+.hero-video--section{
+    width: 32rem ;
+    border-radius: 3rem;
+     border: 2px solid var(--bs-primary-color);
+}
+.video{
+    padding: 10px;
+    border-radius: 3rem;
+    /* border: 2px solid var(--bs-primary-color); */
+}
+
+
+/* wave-style */
+.custom-shape-divider-bottom-1692552980 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692553118 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692553118 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 109px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1692553118 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* service-section */
+.services-section{
+    padding: 4rem 0 3rem 0;
+}
+
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vidsecond{
+    height: 300px;
+    margin-left: -150px;
+}
+.how{
+    margin-left: -100px;
+}
+
+.lin{
+margin-top: -60px;
+}
+.secvid{
+    height: 300px;
+    border-radius: 20px;
+}
+
+.btnthird {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .btnthird:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-btnthird 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing-btnthird {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .btnthird:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  .services-section .card-box{
+    padding: 4rem  2.4rem 3rem!important;
+    border-radius: .5rem!important;
+}
+
+/* CryptoExamples  */
+
+.bitcoin{
+  height: 200px;
+}
+
+.coinsty{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 50px rgba(26, 9, 78, 0.486) ;
+}
+
+.light{
+  height: 200px;
+  width: 300px;
+  background-image: url(https://static.tradingview.com/static/bundles/frame.e6055902ae09441c6655.svg); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infosection{
+  width: 38rem ;
+  /* border-radius: 3rem;
+   border: 2px solid var(--bs-primary-color); */
+}
+
+/* star rating  */
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+  color: #ffc700;
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+
+/* carousel style start */
+.carousel .card{
+  background-color: #262631;
+  color: var(--bs-main-color);
+  transition: all 0.3s linear;
+}
+
+.carousel-inner .card p{
+  color: var(--bs-main-color);
+}
+
+.carousel-inner .card:hover{
+  background:  var(--bs-main-color);
+  color: var(--bs-dark-color);
+}
+.carousel-inner .card:hover p{
+  color: var(--bs-main-colors);
+}
+
+.carousel-indicators{
+  bottom: -20%;
+}
+.carousel-indicators [data-bs-target]{
+  width: .7rem;
+  height: .7rem;
+  background-color: var(--secondayr-color);
+}
+/* carousel style end */
+
+
+/* contect section start  */
+
+.contect-section{
+  position: relative;
+}
+.custom-shape-divider-top-1692644766 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1692644766 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 177px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1692644766 .shape-fill {
+  fill: #1A1D20;
+}
+
+.contect-section .form-section{
+  width: 50%
+}
+
+.formsty{
+  width: 60%;
+  padding: 2rem;
+  background-color: var(--bs-dark-primary);
+  border-radius: 20px;
+}
+.button-73 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #FFC229;
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+
+/*footer styling */
+.main-footer-section{
+  padding: 0 0 4rem 0;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  
+     color: var( --bs-main-color);
+ }
+ 
+ .contact-div{
+     background-color:  var(--bs-dark-color);
+     border-radius: 0px 0px 50px 50px ;
+ }
+ 
+ .icon-div{
+     width: 5rem;
+     height: 5rem;
+     /*background: #1089ff;*/
+ }
+ 
+ .icon-  {
+     width: 2.5rem;
+     height: 2.5rem;
+     background-color: #1089ff;
+     color: var( --bs-main-color);
+ }
+ 
+ .icon-span .fa-brands, .fab{
+     color:white;
+ }
+ 
+ .carousel-indicators{
+     bottom: -20%;
+ }
+ 
+ .carousel-indicators [data-bs-target]{
+     margin-top: 2rem;
+     width: .7rem;
+     height: .7rem;
+     background-color: #143a5f;
+ }
+
+ .curvecontact{
+  border-radius: 0px 0px 50px 50px ;
+ 
+ }
+ .tele{
+  border-radius: 0px 0px 0px 50px ;
+ }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <title>BootStrap</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg py-4 pt-lg-3">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">CryptoShastra</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-capitalize" aria-disabled="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-capitalize" aria-disabled="true"
+                >Service</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-capitalize" aria-disabled="true"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero-Section-Start -->
+
+    <section class="bg-main bg-color hero-section">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start"
+          >
+            <h1 class="text-capitalize text-white">
+              Create Your Own Trading Dashboard
+            </h1>
+            <p class="mt-3 mb-5 para-width text-light-grey">
+              Gain a competitive edge tracking your holdings over time with customizable charts and watchlists, instant price alerts, and frictionless multi-exchange trading all in one place.
+            </p>
+            <div class="text-center w-100 text-md-start">
+             <a href="https://cryptowat.ch/account/create">
+              <button
+              class="text-capitalize button-85"
+              role="button"
+              data-bs-toggle="tooltip"
+              data-bs-title="GLets Get Started"
+              style="font-size: 1rem;
+              letter-spacing: 0.03rem;
+              word-spacing: .1rem;"
+            >
+              Create your own dashboard
+            </button>
+             </a>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6">
+            <div class="text-center video">
+              <video
+                src="https://static.tradingview.com/static/bundles/chart-big.hvc1.3910a83033e59ce235f1.mp4"
+                loop
+                muted
+                autoplay
+                class="hero-video--section" 
+              >
+                Crypto Currency
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-shape-divider-bottom-1692553118">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <!-- hero-Section-Ends -->
+
+    <!-- Service-Section-Start  -->
+
+    <section class="services-section" style="background-color: #908790;
+    background-image: linear-gradient(0deg, #908790 0%, #ffffff 50%, #ffffff 100%);
+    ">
+      <div class="container text-center common-title fw-bold">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-6">
+                <video
+                  src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/cryptocurrency-exchange-4423755-3675976.mp4?h=700"
+                  loop
+                  muted
+                  autoplay
+                  class="vidsecond"
+                >
+                  Crypto Currency
+                </video>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+              <h2 class="common-heading how">How does cryptocurrency work?</h2>
+            </div>
+          </div>
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div class="container" mt-5>
+        <div class="workcryptobox">
+          <p class="mt-3 mb-5 para-width ">
+            Cryptocurrencies run on a distributed public ledger called blockchain,
+            a record of all transactions updated and held by currency holders. <br><br>
+            Units of cryptocurrency are created through a process called mining,
+            which involves using computer power to solve complicated mathematical
+            problems that generate coins. Users can also buy the currencies from
+            brokers, then store and spend them using cryptographic wallets. <br><br> If you
+            own cryptocurrency, you don’t own anything tangible. What you own is a
+            key that allows you to move a record or a unit of measure from one
+            person to another without a trusted third party. <br><br> Although Bitcoin has
+            been around since 2009, cryptocurrencies and applications of
+            blockchain technology are still emerging in financial terms, and more
+            uses are expected in the future. Transactions including bonds, stocks,
+            and other financial assets could eventually be traded using the
+            technology. <br><br>
+            Click the button below to try the Virtual Crypto Trading Semulator.......
+          </p>
+        </div>
+        <div class="text-center w-100 text-md-start btn">
+          <a href="https://phemex.com/register-vt1?referralCode=JQP885">
+            <button
+            class="text-capitalize button-64"
+            data-bs-toggle="tooltip"
+            data-bs-title="Want to try!!"
+          >
+          <span class="text">Trading Semulator</span>
+          </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service-Section-End  -->
+
+<!-- Type of crypto cyrrency Start -->
+
+<Section class="services-section" style="background-color: #1a1d20;">
+  <div class="container text-center common-title fw-bold">
+    <h2 class="common-heading text-white">Some well Known Cryptocurrency</h2>
+    <hr class="w-25 mx-auto " style="color: white;  ">
+  </div>
+
+  <div class="container">
+    <div class="row g-4" >
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty" >
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/bitcoin-7889721-6257641.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div >
+            <p class="mb-3 fw-bolder">BitCoin</p>
+          <p >Founded in 2009, Bitcoin was the first cryptocurrency and is still the most commonly traded. The currency was developed by Satoshi Nakamoto. <br> <br>
+          BTC USD: <br>
+          $26,019.76 <span style="color: red;">-0.26%</span>
+          </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty">
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/ethereum-7889738-6257658.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div style="padding: 10px;">
+            <p class="mb-3 fw-bolder">Ethereum</p>
+          <p >Developed in 2015, Ethereum is a blockchain platform with its own cryptocurrency, called Ether (ETH) or Ethereum. 
+            <br> <br>
+          ETH USD: <br>
+          $1,663.76 <span style="color: red;">-0.51%</span>
+          </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty">
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/doge-7889716-6257636.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div >
+            <p class="mb-3 fw-bolder">Dogecoin</p>
+          <p >Dogecoin is a cryptocurrency created by software engineers Billy Markus and Jackson Palmer, who decided to create a payment system as a "joke". <br> <br>
+            DOGE USD: <br>
+            $0.07895 <span style="color: red;">-2.26%</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty">
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/litecoin-7889740-6257660.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div >
+            <p class="mb-3 fw-bolder">Litecoin</p>
+          <p >Litecoin is a decentralized peer-to-peer cryptocurrency and open-source software project released under the MIT/X11 license. <br> <br>
+            LTC USD: <br>
+            $65.68 <span style="color: rgb(21, 116, 18);">+1.96%</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty">
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/polygon-7889734-6257654.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div >
+            <p class="mb-3 fw-bolder">Polygon </p>
+          <p >Polygon is a blockchain platform which aims to create a multi-chain blockchain system compatible with Ethereum. As with Ethereum.<br> <br>
+            POL USD: <br>
+            $56.87.76 <span style="color: rgb(21, 116, 18);">+0.26%</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex py-3 px-3  coinsty">
+         <div style="padding: 10px;">
+          <video
+          src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/cardano-7889719-6257639.mp4?h=700"
+          loop
+          muted
+          autoplay
+          class="bitcoin"
+        >
+         </div>
+          <div >
+            <p class="mb-3 fw-bolder">Cardano  </p>
+          <p >Cardano is a public blockchain platform. It is open-source and decentralized, with consensus achieved using proof of stake.<br> <br>
+            CARD USD: <br>
+            $0.0876 <span style="color: red;">-0.06%</span></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</Section>
+
+
+<!-- Type of crypto cyrrency End -->
+
+    <!-- semulator start -->
+    <section class="bg-main bg-color hero-section" style="background-color: #908790;
+    background-image: linear-gradient(180deg, #908790 0%, #ffffff 33%, #ffffff 66%, #908790 100%);
+    ">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-6">
+            <div class="text-center">
+              <video
+                src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/cryptocurrency-3575834-2997684.mp4?h=700"
+                loop
+                muted
+                autoplay
+                class="secvid"
+              >
+                Crypto Currency
+              </video>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start"
+          >
+            <h1 class="text-capitalize ">
+              Looking for a Crypto paper trading simulator?
+            </h1>
+            <p class="mt-3 mb-5 para-width ">
+              Phemex is a Singapore registered exchange, and that offers a testnet account, which is equivalent to a paper trading account. If you are already well versed with Crypto exchanges, then you should use this, otherwise, look for other paper trading options listed below.
+            </p>
+            <div class="text-center w-100 text-md-start">
+              <a href="https://phemex.com/register-vt1?referralCode=JQP885" style="font-size: 1rem;
+              letter-spacing: 0.03rem;
+              word-spacing: .5rem;">
+                <button
+                class="text-capitalize btnthird"
+                role="button"
+                data-bs-toggle="tooltip"
+                data-bs-title="Want to Try!!"
+              >
+              Try Phemex Simulated Trading Account 
+              </button>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+</section>>
+      
+    <!-- semulator end -->    
+
+    <!-- live crypto trading api start  -->
+    <Section class="services-section" style="background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #02091a 50%, #ffffff 100%);
+    
+    ">
+      <div class="container text-center common-title fw-bold">
+        <h2 class="common-heading">Live Trading of 500+ Cryptocurrency</h2>
+        <hr class="w-25 mx-auto " >
+      </div>
+
+      <div class="container" style="display: flex; justify-content: center; align-items: center; ">
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container ">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">** All the Prices are in USD **</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": "1050",
+  "height": "490",
+  "defaultColumn": "moving_averages",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "dark",
+  "locale": "in",
+  "isTransparent": false
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+      </div>
+      </section>
+    <!-- live crypto trading api end  -->
+
+    
+    <!-- Information section start  -->
+    <section class="bg-main bg-color hero-section" style="background-color: black;">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start"
+          >
+            <h1 class="text-capitalize text-white">
+              Charting without limits
+            </h1>
+            <p class="mt-7 mb-3 para-width text-light-grey">
+              Visualize markets in the way that makes sense to you. Analyze price, liquidity, and trading volume by applying unlimited technical indicators and drawings. Overlay your trades on the chart and edit open orders with a click.
+            </p>
+
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6">
+            <div class="text-center ">
+              <video
+                src="https://static.cryptowat.ch/landing/build/a053d40fb164795799b369d56260e1ba5ecbaf6a/production/static/charts-964f0e403b8ab735713edaefc8802817.mp4"
+                
+                autoplay
+                
+                class="infosection" 
+              >
+                Crypto Currency
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+<section class="bg-main bg-color hero-section"  style="background-color: black;">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-12 col-lg-6 " style="margin-left: -20px;">
+        <div class="text-center ">
+          <video
+            src="https://static.cryptowat.ch/landing/build/a053d40fb164795799b369d56260e1ba5ecbaf6a/production/static/trading-0b9d18399a2c4fca2d4918a1977ba008.mp4"
+            
+            autoplay
+            class="infosection" 
+          >
+            Crypto Currency
+          </video>
+        </div>
+      </div>
+
+      <div
+        class="col-12 col-md-12 col-lg-6 "
+      >
+        <h1 class="text-capitalize text-white">
+          One trading ticket for every exchange
+        </h1>
+        <p class="mt-7 mb-3 para-width text-light-grey">
+          Stop wasting time switching between multiple exchanges. Cryptowatch offers a consistent trading experience no matter which exchange you choose to trade on.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-main bg-color hero-section" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start"
+      >
+        <h1 class="text-capitalize text-white">
+          A single source of truth for your portfolio
+        </h1>
+        <p class="mt-7 mb-3 para-width text-light-grey">
+          Manage your holdings across exchanges with a single login to Cryptowatch. Our portfolio reconciles your account history to show the growth of your assets over time while allowing you to close or modify any open position from one screen.
+        </p>
+
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="text-center ">
+          <video
+            src="https://static.cryptowat.ch/landing/build/a053d40fb164795799b369d56260e1ba5ecbaf6a/production/static/portfolio-b22e5441904904587ed7415bf858eb15.mp4"
+            
+            autoplay
+            class="infosection" 
+          >
+            Crypto Currency
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Information section End -->
+
+    <!-- Peoples views start  -->
+
+    <Section class="common-section  pt-5 bg-color" style="background-color: black;">
+      <div class="container text-center common-title fw-bold">
+        <h2 class="common-heading text-white">Peoples View's</h2>
+        <hr class="w-25 mx-auto " style="color: white;  ">
+      </div>
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          
+          <div class="container">
+            <div class="row">
+
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12562303/clintheiden-edgecorecco*1500xx2400-2400-0-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12462574/clintbedolido-website*1500xx4016-4016-1000-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://www.sourcesecurity.com/img/people/clint-choate-300.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12562303/clintheiden-edgecorecco*1500xx2400-2400-0-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12462574/clintbedolido-website*1500xx4016-4016-1000-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://www.sourcesecurity.com/img/people/clint-choate-300.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12562303/clintheiden-edgecorecco*1500xx2400-2400-0-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://media.bizj.us/view/img/12462574/clintbedolido-website*1500xx4016-4016-1000-0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="card p-3" style="width: 18rem;">
+                  <img src="https://www.sourcesecurity.com/img/people/clint-choate-300.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Carlos Smith</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="mt-3">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </Section>
+    <!-- Peoples views ends  -->
+
+
+    <!-- contect us section starts -->
+    <Section class="common-section contect-section mb-5  bg-color" style="background-color: white">
+
+      <div class="custom-shape-divider-top-1692644659">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>  
+      <div class="container text-center common-title fw-bold">
+        <h2 class="common-heading ">Contect Us</h2>
+        <hr class="w-25 mx-auto ">
+      </div>
+
+      <div class="container formsty">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label text-white">Email address:</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label text-white">Name:</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label text-white">Example textarea:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="pt-3 d-flex justify-content-center align-items-center">
+          <button class="button-73 " role="button">Submit</button>
+        </div>
+      </div>
+      </section>
+    <!-- contect us section starts -->
+
+    <!--footer section-->
+
+<footer class="main-footer-section bg-color">
+  <div class="contact-details">
+      <div class="container px-5">
+          <div class="row g-0">
+              <div class="col-lg-4 ">
+                  <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                      <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <img src="https://cdn.iconscout.com/icon/free/png-512/free-telephone-253-415057.png?f=avif&w=256" alt="GIF Image" class="img-fluid">
+                      </div>
+                      <p class="text-white">(+00) 1234 5678</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 ">
+                  <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                      <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <!--                            <i class="fa-solid fa-phone"></i>-->
+                          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/mail-2687904-2229453.png?f=avif&w=256" alt="GIF Image" class="img-fluid">
+                      </div>
+                      <p class="text-white">abc@gmail.com</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 ">
+                  <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                      <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <img src="https://cdn.iconscout.com/icon/free/png-512/free-maps-63-461598.png?f=avif&w=256" alt="GIF Image" class="img-fluid">
+                      </div>
+                      <p class="text-white">Bhilai, DURG , C.G.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="footer-section py-5 text-white">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-2 col-md-6 col-6">
+                      <div class="footer-links">
+                          <h4 class=" mt-5 mb-3">Product</h4>
+                          <ul class="text-black list-unstyled d-flex flex-column gap-2">
+                              <li>Chart</li>
+                              <li>Alert</li>
+                              <li>Portfolio</li>
+                              <li>Trading</li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-2 col-md-6 col-6">
+                      <div class="footer-links">
+                          <h4 class=" mt-5 mb-3">About</h4>
+                          <ul class="text-black list-unstyled d-flex flex-column gap-2">
+                              <li>Price</li>
+                              <li>Cripto Watch</li>
+                              <li>Carrer</li>
+                              <li>Our Story</li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-2 col-md-6 col-6">
+                      <div class="footer-links">
+                          <h4 class=" mt-5 mb-3">Contects</h4>
+                          <ul class="text-black list-unstyled d-flex flex-column gap-2">
+                              <li>Support</li>
+                              <li>Bolg</li>
+                              <li>Twetter</li>
+                              <li>YouTube</li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-12">
+                      <div class="footer-links">
+                          <h4 class="mt-5 mb-3 ">Subscribe</h4>
+                          <div class="input-group mb-3 w-75">
+                              <input type="text" class="form-control" placeholder="Recipient's username"
+                                     aria-label="Recipient's username" aria-describedby="basic-addon2">
+                              <span class="input-group-text btn btn-primary" id="basic-addon2">Subscribe</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="container">
+          <hr class="container mx-auto">
+
+          <div class="row">
+              <div class="col-lg-8 col-12 text-black">
+                  Copyright ©2023 All rights reserved. | This template is made with by <span class="bg-theme"> SanskarDev.com</span>
+              </div>
+              <div class="col-md-4 col-12  ">
+                  <div class="d-flex justify-content-center justify-content-lg-end gap-5 mt-lg-0 mt-3">
+                      <a href="https://www.instagram.com/thapatechnical/" target="_blank">
+                          <div class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3">
+                              <i class="fa-brands fa-instagram"></i>
+                          </div>
+                      </a>
+                      <div class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <i class="fa-brands fa-whatsapp"></i>
+                      </div>
+                      <div class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3">
+<!--                            <i class="fa-brands fa-whatsapp"></i>-->
+                          <i class="fa-brands fa-twitter"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!--footer sectoin ends -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
+  </body>
+</html>
